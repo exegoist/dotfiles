@@ -13,6 +13,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
+set number
 set nohlsearch
 set ai
 set bg=dark
