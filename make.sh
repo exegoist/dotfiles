@@ -21,3 +21,4 @@ done
 echo "Installing vundle.."
 cd ~
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+source ~/.bashrc
