@@ -9,3 +9,4 @@ fi
 alias vi='vim'
 
 PS1=$'[\@] \u@\h: \w ƒ '
+export WORKON_HOME=~/.virtualenvs

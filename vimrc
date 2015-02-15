@@ -14,6 +14,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle "davidhalter/jedi-vim"
 
+let g:netrw_liststyle=3
 set number
 set nohlsearch
 set ai
@@ -26,7 +27,6 @@ au BufEnter,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,tr
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
 set smartindent
 syntax on
 set listchars=tab:>-
