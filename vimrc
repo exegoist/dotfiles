@@ -1,35 +1,68 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+filetype off               " required for some reason
+
+" reset to vim-defaults
+if &compatible             " only if not set before:
+    set nocompatible       " use vim-defaults instead of vi-defaults (easier, more user friendly)
+endif
+
+"-----------------------------------------------------------------------------------------------
+" Plugins Section
+"-----------------------------------------------------------------------------------------------
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
 Bundle 'gmarik/vundle'
-filetype plugin indent on     " required!
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-Bundle "davidhalter/jedi-vim"
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'scrooloose/nerdtree'
 
-let g:netrw_liststyle=3
-set number
-set nohlsearch
-set ai
-set bg=dark
-set showmatch
-highlight SpecialKey ctermfg=DarkGray
-set listchars=tab:>-,trail:~
-set list
-au BufEnter,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+call vundle#end()
+filetype plugin indent on
+
+let g:UltiSnipsExpandTrigger="<tab>"
+"------------------------------------------------------------------------------------------------
+" Basic Editor Settings
+"------------------------------------------------------------------------------------------------
 syntax on
-set listchars=tab:>-
-set listchars+=trail:.
-set ignorecase
-set smartcase
+colorscheme blackboard
+
+set expandtab              " fill tab with spaces
+set tabstop=4              " tab will add 4 spaces
+set shiftwidth=4           " autoindents by 4 spaces
+set number                 " numerate lines
+set nowrap                 " dont wrap lines
+set textwidth=79           " text auto breaks after 79 chars
+set modeline               " enable modeline ?????
+
+set ruler                  " show cursor position
+set laststatus=2           " use 2 lines for status bar
+set showcmd                " show command in status line
+set showmode               " show mode in status bar
+set incsearch              " highlite search results while type in search pattern
+
+set bs=indent,eol,start    " allow backspacing over everything in insert mode
+set smarttab               " make <tab> and <backspace> smarter
+set ignorecase             " do case insensitive matching
+set smartcase              " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set autoindent smartindent " enable indentations
+
+set undolevels=100         " keep 100 undos
+set updatecount=100        " write changes to swapfile every 100 chars
+
+set background=dark        " dark background
+set listchars=tab:»·,trail:·,eol:¬
+set list
+
+"-----------------------------------------------------------------------------------------------
+" Map Section
+"-----------------------------------------------------------------------------------------------
+
+inoremap {      {}<Left>
+inoremap (      ()<Left>
+inoremap [      []<Left>
+inoremap '      ''<Left>
+inoremap "      ""<Left>
+
+
