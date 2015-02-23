@@ -17,6 +17,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -26,7 +27,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " Basic Editor Settings
 "------------------------------------------------------------------------------------------------
 syntax on
-colorscheme blackboard
 
 set expandtab              " fill tab with spaces
 set tabstop=4              " tab will add 4 spaces
@@ -54,6 +54,7 @@ set updatecount=100        " write changes to swapfile every 100 chars
 set background=dark        " dark background
 set listchars=tab:»·,trail:·,eol:¬
 set list
+colorscheme solarized
 
 "-----------------------------------------------------------------------------------------------
 " Map Section
