@@ -17,7 +17,8 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
@@ -54,7 +55,7 @@ set updatecount=100        " write changes to swapfile every 100 chars
 set background=dark        " dark background
 set listchars=tab:»·,trail:·,eol:¬
 set list
-colorscheme solarized
+colorscheme jellybeans
 
 "-----------------------------------------------------------------------------------------------
 " Map Section
