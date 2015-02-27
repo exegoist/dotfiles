@@ -17,8 +17,9 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -37,10 +38,9 @@ set nowrap                 " dont wrap lines
 set textwidth=79           " text auto breaks after 79 chars
 set modeline               " enable modeline ?????
 
-set ruler                  " show cursor position
-set laststatus=2           " use 2 lines for status bar
+set laststatus=2           " always show statusline
 set showcmd                " show command in status line
-set showmode               " show mode in status bar
+set noshowmode               " show mode in status bar
 set incsearch              " highlite search results while type in search pattern
 
 set bs=indent,eol,start    " allow backspacing over everything in insert mode
