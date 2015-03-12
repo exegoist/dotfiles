@@ -14,6 +14,7 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Bundle 'SirVer/ultisnips'
+Bundle 'Raimondi/delimitMate'
 Bundle 'honza/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
@@ -56,15 +57,4 @@ set background=dark        " dark background
 set listchars=tab:»·,trail:·,eol:¬
 set list
 colorscheme jellybeans
-
-"-----------------------------------------------------------------------------------------------
-" Map Section
-"-----------------------------------------------------------------------------------------------
-
-inoremap {      {}<Left>
-inoremap (      ()<Left>
-inoremap [      []<Left>
-inoremap '      ''<Left>
-inoremap "      ""<Left>
-
 
