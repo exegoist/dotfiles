@@ -36,7 +36,6 @@ set tabstop=4              " tab will add 4 spaces
 set shiftwidth=4           " autoindents by 4 spaces
 set number                 " numerate lines
 set nowrap                 " dont wrap lines
-set textwidth=79           " text auto breaks after 79 chars
 set modeline               " enable modeline ?????
 
 set laststatus=2           " always show statusline
