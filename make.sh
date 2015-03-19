@@ -12,13 +12,15 @@ cd $dir
 echo "...done"
 
 for file in $files; do
-	echo "Moving any existing dotfiles from ~ to $originals"
-	mv ~/.$file $originals/
-	echo "Creating symlink to $file in home directory"
-	ln -s $dir/$file ~/.$file
+    echo "Moving any existing dotfiles from ~ to $originals"
+    mv ~/.$file $originals/
+    echo "Creating symlink to $file in home directory"
+    ln -s $dir/$file ~/.$file
 done
 
 echo "Installing vundle.."
 cd ~
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 source ~/.bashrc
+mkdir ~/.vim/UltiSnips
+cp *.snippets ~/.vim/UltiSnips/
