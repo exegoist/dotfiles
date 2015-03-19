@@ -18,8 +18,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'honza/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
+Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-airline'
 Bundle 'nanotech/jellybeans.vim'
 
 call vundle#end()
