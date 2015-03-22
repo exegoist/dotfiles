@@ -18,9 +18,9 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-echo "Installing vundle.."
+mkdir ~/.vim/UltiSnips
+cp *.snippets ~/.vim/UltiSnips/echo "Installing vundle.."
+
 cd ~
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 source ~/.bashrc
-mkdir ~/.vim/UltiSnips
-cp *.snippets ~/.vim/UltiSnips/
