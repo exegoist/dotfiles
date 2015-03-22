@@ -19,7 +19,9 @@ for file in $files; do
 done
 
 mkdir ~/.vim/UltiSnips
-cp *.snippets ~/.vim/UltiSnips/echo "Installing vundle.."
+cp *.snippets ~/.vim/UltiSnips/
+
+echo "Installing vundle.."
 
 cd ~
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
