@@ -1,7 +1,7 @@
 #!/bin/bash
 dir=~/dotfiles
 originals=~/dotfiles/originals
-files=`ls $dir | grep -v originals | grep -v *.sh`
+files=`ls $dir | grep -v originals | grep -v \*.sh`
 
 echo "Creating directory $originals for backup of original dotfiles in ~"
 mkdir -p $originals
@@ -17,9 +17,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory"
     ln -s $dir/$file ~/.$file
 done
-
-mkdir ~/.vim/UltiSnips
-cp *.snippets ~/.vim/UltiSnips/
 
 echo "Installing vundle.."
 
