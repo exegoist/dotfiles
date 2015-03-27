@@ -14,54 +14,67 @@ URxvt*geometry: 160x50
 URxvt*loginShell: true
 
 URxvt.matcher.button: 1
-URxvt.transparent: true
-URxvt.shading: 7
-URxvt.fading: 27
 
 URxvt*internalBorder: 1
 URxvt*borderLess: false
 URxvt.depth:32
 
-! Colours
-! -----------------------------------------------------------------------------
+! --- special colors ---
 
-*background:  #2D2C28
-*foreground:  #A4A6AB
+*background: #0a0b1b
+*foreground: #d9e6f2
 
-*colorBD:     #DBDDE2
-*colorIT:     #DBDDE2
-*colorUL:     #DBDDE2
+! --- standard colors ---
 
-*cursorColor: #53CAD9
+! black
+*color0: #000000
 
-! BLACK
-*color0:      #5B5955
-*color8:      #707277
+! bright_black
+*color8: #262626
 
-! WHITE
-*color7:      #DBDDE2
-*color15:     #F7F9FF
+! red
+*color1: #b87a7a
 
-! RED
-*color1:      #C4756E
-*color9:      #F6A299
+! bright_red
+*color9: #dbbdbd
 
-! YELLOW
-*color3:      #9B8A4B
-*color11:     #CAB775
+! green
+*color2: #7ab87a
 
-! GREEN
-*color2:      #559A6A
-*color10:     #82C896
+! bright_green
+*color10: #bddbbd
 
-! CYAN
-*color6:      #019BAA
-*color14:     #53CAD9
+! yellow
+*color3: #b8b87a
 
-! BLUE
-*color4:      #6A8DCA
-*color12:     #98BBFB
+! bright_yellow
+*color11: #dbdbbd
 
-! MAGENTA
-*color5:      #B577AC
-*color13:     #E5A4DB
+! blue
+*color4: #7a7ab8
+
+! bright_blue
+*color12: #bdbddb
+
+! magenta
+*color5: #b87ab8
+
+! bright_magenta
+*color13: #dbbddb
+
+! cyan
+*color6: #7ab8b8
+
+! bright_cyan
+*color14: #bddbdb
+
+! white
+*color7: #d9d9d9
+
+! bright_white
+*color15: #ffffff
+
+
+! ------------------------------------------------------------------------------
+! --- end of terminal colors section -------------------------------------------
+! ------------------------------------------------------------------------------
