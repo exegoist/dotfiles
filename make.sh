@@ -1,7 +1,7 @@
 #!/bin/bash
 dir=~/dotfiles
 originals=~/dotfiles/originals
-files=`ls $dir | grep -v originals | grep -v \*.sh`
+files=`ls $dir | grep -v 'originals\|\.sh'`
 
 echo "Creating directory $originals for backup of original dotfiles in ~"
 mkdir -p $originals
