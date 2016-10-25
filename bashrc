@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-alias ll='ls -la'
+alias ll='ls -lah'
 alias vi='vim'
 
 PS1=$'[\@] \u@\h: \w ƒ '
