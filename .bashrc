@@ -11,9 +11,6 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
     for rc in ~/.bashrc.d/*; do
@@ -25,11 +22,13 @@ fi
 unset rc
 export HISTFILE=$HOME/.local/.bash_history
 export TERM=xterm-256color
-alias vi=nvim
-alias tmux='tmux attach'
+
+# geoip function
 i() {
 	curl http://geoip.lan/$1
 }
+
+# pomodoro snips, thanks to @bashbunni
 declare -A pomo_options
 pomo_options["work"]="45"
 pomo_options["break"]="10"
@@ -39,12 +38,15 @@ pomodoro () {
   val=$1
   echo $val | lolcat
   timer ${pomo_options["$val"]}m
-  spd-say "'$val' session done"
+  tmux display-message -d 0 "$val finished"
   fi
 }
 
 alias work="pomodoro 'work'"
 alias br="pomodoro 'break'"
+alias vi=nvim
+
+# fancy prompt
 function _PROMPT_COMMAND() {
 	local EXIT="$?"
 	local red="\\[$(tput setaf 1)\\]"
@@ -65,6 +67,6 @@ function _PROMPT_COMMAND() {
 	local arrow="${arrow_color}➜${reset_color}"
 	local column="${column_color}:${reset_color}"
 	PS1="${arrow} ${base_directory} ${column} "
-	#echo -en "\033]0;$(whoami)@$(uname -n)"
 }
 PROMPT_COMMAND=_PROMPT_COMMAND
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
