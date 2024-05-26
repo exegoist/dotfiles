@@ -1,9 +1,8 @@
 # DO THIS
 
-- clone repo
+- clone repo in `$HOME` directory
 ```bash
-cd ~
-git clone git@github.com/exegoist/dotfiles.git
+git clone https://github.com/exegoist/dotfiles.git
 ```
 - use stow
 ```bash
