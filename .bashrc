@@ -30,19 +30,19 @@ i() {
 
 # pomodoro snips, thanks to @bashbunni
 declare -A pomo_options
-pomo_options["work"]="45"
-pomo_options["break"]="10"
+pomo_options["worky"]="45"
+pomo_options["break"]="15"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
   val=$1
   echo $val | lolcat
   timer ${pomo_options["$val"]}m
-  tmux display-popup -w 25 -h 4 -E -T "$val finished" 'read -n 1 -s -r -p "press any key to close"'
+  tmux display-popup -w 24 -h 4 -E -T "$val finished" 'read -n 1 -s -r -p "hit any key to close!"'
   fi
 }
 
-alias work="pomodoro 'work'"
+alias work="pomodoro 'worky'"
 alias br="pomodoro 'break'"
 alias vi=nvim
 
