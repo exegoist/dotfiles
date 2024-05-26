@@ -38,7 +38,7 @@ pomodoro () {
   val=$1
   echo $val | lolcat
   timer ${pomo_options["$val"]}m
-  tmux display-popup -E -w 30 -h 4 'echo "$val finished"; read -n 1 -s -r -p "press any key to continue"'
+  tmux display-popup -w 25 -h 4 -E -T "$val finished" 'read -n 1 -s -r -p "press any key to close"'
   fi
 }
 
