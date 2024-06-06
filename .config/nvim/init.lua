@@ -19,11 +19,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-	},
-	{
 		"stevearc/oil.nvim",
 		opts = {},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -85,10 +80,9 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"nvim-neorg/neorg",
-		dependencies = { "luarocks.nvim" },
-		version = "*",
+		"jakewvincent/mkdnflow.nvim",
 	},
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 })
 
 require("base")
@@ -96,5 +90,5 @@ require("keymap")
 require("p-mason")
 require("p-conform")
 require("p-lualine")
-require("p-neorg")
 require("p-remember")
+require("p-mkdnflow")
