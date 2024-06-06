@@ -34,7 +34,7 @@ require('mkdnflow').setup({
     links = {
         style = 'markdown',
         name_is_source = false,
-        conceal = false,
+        conceal = true,
         context = 0,
         implicit_extension = nil,
         transform_implicit = false,
