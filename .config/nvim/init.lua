@@ -12,11 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	{ "rebelot/kanagawa.nvim" },
+	{ "comfysage/twilight-moon" },
+	{ "NTBBloodbath/sweetie.nvim" },
 	{
-		"rebelot/kanagawa.nvim", -- neorg needs a colorscheme with treesitter support
-		config = function()
-			vim.cmd.colorscheme("kanagawa")
-		end,
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 	{
 		"stevearc/oil.nvim",
@@ -40,6 +43,7 @@ require("lazy").setup({
 	},
 	{
 		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	{
@@ -57,7 +61,6 @@ require("lazy").setup({
 		opts = {
 			ensure_installed = {
 				"bash",
-				"c",
 				"dockerfile",
 				"ini",
 				"json",
@@ -80,11 +83,17 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
 		"jakewvincent/mkdnflow.nvim",
 	},
 	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 })
 
+vim.cmd([[colorscheme sweetie]])
 require("base")
 require("keymap")
 require("p-mason")
