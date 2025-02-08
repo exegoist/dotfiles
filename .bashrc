@@ -52,5 +52,5 @@ function _PROMPT_COMMAND() {
 	local column="${column_color}:${reset_color}"
 	PS1="${arrow} ${base_directory} ${column} "
 }
-PROMPT_COMMAND=_PROMPT_COMMAND
+PROMPT_COMMAND="history -a; _PROMPT_COMMAND"
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
