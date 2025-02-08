@@ -1,4 +1,4 @@
--- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
+-- Install 'mini.nvim' with 'mini.deps'
 local path_package = vim.fn.stdpath('data') .. '/site/'
 local mini_path = path_package .. 'pack/deps/start/mini.nvim'
 if not vim.loop.fs_stat(mini_path) then
@@ -13,11 +13,12 @@ if not vim.loop.fs_stat(mini_path) then
   vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
--- Set up 'mini.deps' (customize to your liking)
+-- Set up 'mini.deps'
 require('mini.deps').setup({ path = { package = path_package } })
 require('mini.files').setup()
 require('mini.notify').setup()
--- editing
+
+-- editing plugins
 require('mini.ai').setup()
 require('mini.comment').setup()
 require('mini.move').setup({
@@ -37,17 +38,23 @@ require('mini.move').setup({
 require('mini.operators').setup()
 require('mini.pairs').setup()
 require('mini.surround').setup()
--- appearance
+
+-- appearance plugins
 require('mini.icons').setup()
 require('mini.statusline').setup()
 
--- third-party
+-- third-party plugins
 local add = MiniDeps.add
 add({
   source = 'vladdoster/remember.nvim',
 })
+add({
+  source = 'stevearc/conform.nvim',
+})
+add({ source = "catppuccin/nvim", name = "catppuccin" })
 
 -- config
 require('base')
 require('keymap')
+require('p-conform')
 require('p-remember')

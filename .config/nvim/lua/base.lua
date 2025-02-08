@@ -13,6 +13,8 @@ opt.expandtab=true
 opt.autoindent=true
 
 opt.cursorline=true
+vim.cmd.colorscheme "catppuccin"
+vim.api.nvim_set_hl(0, 'Comment', { italic=true })
 vim.api.nvim_create_autocmd('TextYankPost',{
 	callback=function()
 		vim.highlight.on_yank({
