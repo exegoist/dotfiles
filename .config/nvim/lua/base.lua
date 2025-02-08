@@ -7,25 +7,12 @@ opt.sidescrolloff = 5
 
 opt.hlsearch=true
 opt.incsearch=true
-
-opt.mouse:append('a')
-opt.clipboard:append('unnamedplus')
-
 opt.tabstop=2
 opt.shiftwidth=2
 opt.expandtab=true
 opt.autoindent=true
 
-opt.ignorecase=true
-opt.smartcase=true
-
-opt.swapfile=true
-opt.autoread=true
-vim.bo.autoread=true
-
 opt.cursorline=true
-opt.termguicolors=true
-
 vim.api.nvim_create_autocmd('TextYankPost',{
 	callback=function()
 		vim.highlight.on_yank({

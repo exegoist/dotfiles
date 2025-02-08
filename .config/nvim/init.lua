@@ -1,104 +1,53 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+-- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
+local path_package = vim.fn.stdpath('data') .. '/site/'
+local mini_path = path_package .. 'pack/deps/start/mini.nvim'
+if not vim.loop.fs_stat(mini_path) then
+  vim.cmd('echo "Installing `mini.nvim`" | redraw')
+  local clone_cmd = {
+    'git', 'clone', '--filter=blob:none',
+    '--branch', 'stable',
+    'https://github.com/echasnovski/mini.nvim', mini_path
+  }
+  vim.fn.system(clone_cmd)
+  vim.cmd('packadd mini.nvim | helptags ALL')
+  vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
-vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	{ "rebelot/kanagawa.nvim" },
-	{ "comfysage/twilight-moon" },
-	{ "NTBBloodbath/sweetie.nvim" },
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
-		"stevearc/oil.nvim",
-		opts = {},
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-	},
-	{
-		"vladdoster/remember.nvim",
-	},
-	{
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-	},
-	{
-		"stevearc/conform.nvim",
-		opts = {},
-	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = {
-				"bash",
-				"dockerfile",
-				"ini",
-				"json",
-				"lua",
-				"markdown",
-				"markdown_inline",
-				"query",
-				"regex",
-				"sql",
-				"toml",
-				"vim",
-				"vimdoc",
-				"xml",
-				"yaml",
-			},
-			highlight = { enable = true },
-		},
-		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-		end,
-	},
-	{
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
-		"jakewvincent/mkdnflow.nvim",
-	},
-	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+-- Set up 'mini.deps' (customize to your liking)
+require('mini.deps').setup({ path = { package = path_package } })
+require('mini.files').setup()
+require('mini.notify').setup()
+-- editing
+require('mini.ai').setup()
+require('mini.comment').setup()
+require('mini.move').setup({
+    mappings = {
+      left  = '<S-left>',
+      right = '<S-right>',
+      down  = '<S-down>',
+      up    = '<S-up>',
+
+      line_left  = '<S-left>',
+      line_right = '<S-right>',
+      line_down  = '<S-down>',
+      line_up    = '<S-up>',
+    }
+  }
+)
+require('mini.operators').setup()
+require('mini.pairs').setup()
+require('mini.surround').setup()
+-- appearance
+require('mini.icons').setup()
+require('mini.statusline').setup()
+
+-- third-party
+local add = MiniDeps.add
+add({
+  source = 'vladdoster/remember.nvim',
 })
 
-vim.cmd([[colorscheme sweetie]])
-require("base")
-require("keymap")
-require("p-mason")
-require("p-conform")
-require("p-lualine")
-require("p-remember")
-require("p-mkdnflow")
-require("p-oil")
+-- config
+require('base')
+require('keymap')
+require('p-remember')
