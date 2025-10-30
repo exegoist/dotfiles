@@ -25,7 +25,7 @@ export TERM=xterm-256color
 
 # geoip function
 i() {
-	curl http://geoip.lan/$1
+	curl -sS ipinfo.io/$1 | jq .
 }
 
 alias vi=nvim
