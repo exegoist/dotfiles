@@ -1,18 +1,20 @@
 local opt=vim.opt
 
-opt.number=true
+opt.clipboard = "unnamedplus"
+
+opt.number = true
 
 opt.scrolloff = 5
 opt.sidescrolloff = 5
 
-opt.hlsearch=true
-opt.incsearch=true
-opt.tabstop=2
-opt.shiftwidth=2
-opt.expandtab=true
-opt.autoindent=true
+opt.hlsearch = true
+opt.incsearch = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
 
-opt.cursorline=true
+opt.cursorline = true
 vim.cmd.colorscheme "catppuccin"
 vim.api.nvim_set_hl(0, 'Comment', { italic=true })
 vim.api.nvim_create_autocmd('TextYankPost',{
