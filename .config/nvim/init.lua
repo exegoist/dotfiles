@@ -28,23 +28,12 @@ require('mini.move').setup({
 require('mini.operators').setup()
 require('mini.pairs').setup()
 require('mini.surround').setup()
+require('mini.misc').setup()
 
 -- appearance plugins
 require('mini.icons').setup()
 require('mini.statusline').setup()
 
--- third-party plugins
-local add = MiniDeps.add
-add({
-  source = 'vladdoster/remember.nvim',
-})
-add({
-  source = 'stevearc/conform.nvim',
-})
-add({ source = "catppuccin/nvim", name = "catppuccin" })
-
 -- config
 require('base')
 require('keymap')
-require('p-conform')
-require('p-remember')

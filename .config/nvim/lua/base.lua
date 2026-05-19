@@ -13,6 +13,9 @@ opt.expandtab = true
 opt.autoindent = true
 
 opt.cursorline = true
+
+MiniMisc.setup_restore_cursor()
+
 vim.cmd.colorscheme "catppuccin"
 vim.api.nvim_set_hl(0, 'Comment', { italic=true })
 vim.api.nvim_create_autocmd('TextYankPost',{
