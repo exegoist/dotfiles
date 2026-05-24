@@ -1,10 +1,18 @@
--- Install 'mini.nvim' with 'mini.deps'
 vim.pack.add({
   { src = 'https://github.com/nvim-mini/mini.nvim', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.files', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.notify', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.ai', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.comment', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.operators', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.move', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.pairs', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.surround', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.misc', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.icons', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.statusline', version = 'stable' },
 })
 
--- Set up 'mini.deps'
-require('mini.deps').setup({ path = { package = path_package } })
 require('mini.files').setup()
 require('mini.notify').setup()
 
