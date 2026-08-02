@@ -20,7 +20,7 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-export HISTFILE=$HOME/.local/.bash_history
+
 export TERM=tmux-256color
 
 # geoip function
