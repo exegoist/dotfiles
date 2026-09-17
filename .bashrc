@@ -11,16 +11,7 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
-fi
-unset rc
-
+# set terminal for tmux sessions
 export TERM=tmux-256color
 
 # geoip function
@@ -28,10 +19,21 @@ i() {
 	curl -sS ipinfo.io/$1 | jq .
 }
 
+# ls alternative functions
+if [[ -v BASH_ALIASES[ll] ]]; then
+  unalias ll
+fi
+
+ll() {
+  local path=$1
+  eza -l $path --icons
+}
+tt () {
+  local path=$1
+  eza -lT $path --icons
+}
+
 alias vi=nvim
-# ls alternative aliases
-alias ll='exa -l --icons'
-alias tt='exa -T --icons'
 
 # fancy prompt
 function _PROMPT_COMMAND() {
