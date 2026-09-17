@@ -19,19 +19,13 @@ i() {
 	curl -sS ipinfo.io/$1 | jq .
 }
 
-# ls alternative functions
+# ls alternative aliases
 if [[ -v BASH_ALIASES[ll] ]]; then
   unalias ll
 fi
 
-ll() {
-  local path="$1"
-  eza -l $path --icons
-}
-tt () {
-  local path="$1"
-  eza -lT $path --icons
-}
+alias ll='eza -l --icons auto'
+alias tt='eza -lT --icons auto'
 
 alias vi=nvim
 
