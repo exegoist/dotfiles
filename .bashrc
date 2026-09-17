@@ -29,6 +29,9 @@ i() {
 }
 
 alias vi=nvim
+# ls alternative aliases
+alias ll='exa -l --icons'
+alias tt='exa -T --icons'
 
 # fancy prompt
 function _PROMPT_COMMAND() {
