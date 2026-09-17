@@ -25,11 +25,11 @@ if [[ -v BASH_ALIASES[ll] ]]; then
 fi
 
 ll() {
-  local path=$1
+  local path="$1"
   eza -l $path --icons
 }
 tt () {
-  local path=$1
+  local path="$1"
   eza -lT $path --icons
 }
 
